@@ -1,0 +1,264 @@
+/* Global Styles */
+:root{
+    --main-color: #2c3e50;
+    --hover-color: #45a049;
+    --dark-hover-color: #387a3a;
+    --white-color: white;
+    --search-btn-color: #45a049;
+    --search-btn-hover: #387a3a;
+    --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --font-size: 1rem;
+    --gap: 10px;
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--font-family);
+    background-color: #f4f4f4;
+    padding-top: 60px;
+    line-height: 1.5;
+}
+/* Navbar Logo & Brand */
+.navbar{
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+.logo{
+    /* display طريقة عرض العنصر على الصفحة */
+    /* flex => parent and child عشان تشتغل لازم يكون */
+    /* التنسيق بتكتب على الاب ويبان تأثيره على الابن */
+    /* بيخلي كل الابناء جنب بعض بالعافيه بالغصب */
+    display: flex;
+    /* align-item => display: flex لازم تشتغل مع */
+    /* align-item => بتعمل محاذاه على المستوى الرأسي  */
+    align-items: center;
+    /* justify-content => display: flex لازم تشتغل مع */
+    /* justify-content => بتعمل محاذاه على المستوى الافقي  */
+    /* justify-content: start; */
+    /* display: flex يفضل تشتغل مع */
+    gap: var(--gap);
+}
+.logo-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.brand{
+    font-size: var(--font-size);
+    font-weight: bold; /* <b>, <strong> */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* Navbar Links */
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: var(--gap);
+}
+.nav-links li{
+    margin: 0;
+}
+.nav-links a{
+    color: var(--white-color) !important;
+    text-decoration: none;
+    font-size: var(--font-size);
+    padding: 8px 10px;
+    border-radius: 10px;
+    display: block; /* display: block طريقة عرض العنصر على الصفحة بحيث لا يأي اي شيء جنبه */
+}
+
+.nav-links a:hover{
+    background-color: var(--hover-color);
+}
+/* Dropdown Style */
+.dropdown{
+    position: relative;
+}
+.dropdown-content{
+    list-style-type: none;
+    display: none;
+}
+.dropdown-content.active{
+    display: block;
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+.search-container input{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.7rem;
+}
+.search-container button{
+    padding: 8px 12px;
+    background: linear-gradient(to bottom,var(--search-btn-color), var(--search-btn-hover));
+    border: none;
+    border-radius: 10px;
+    color: var(--white-color) !important;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#dv{
+    width: 100%;
+    background: red;
+}
+section{
+    width: 95%;
+    background: gray;
+    padding: 10px;    
+    /*
+    ازاحات من الداخل
+    padding-top: 25px;
+    padding: 25px 50px;
+    padding: 25px 50px 30px;
+    padding: 25px 50px 30px 10px;
+    */
+    margin:10px;
+    /*
+    هوامش من الخارج
+    margin-left: 25px;
+    margin: 25px 50px;
+    margin: 25px 50px 30px;
+    margin: 25px 50px 30px 10px;
+    */
+}
+/* position relative and absoulte */
+#rel{
+    width: 50%;
+    height: 35vh;
+    background-color: lightslategray;
+    position: relative;
+}
+#abs{
+    width: 30%;
+    height: 7vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+/* position sticky */
+#stky{
+    background-color: aquamarine;
+    position: sticky;
+    top: 85px;
+}
+/* box-sizing */
+.box{
+    width: 300px;
+    margin: auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+}
+.kk{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #999;
+}
+
+/* media query */
+/* responsive => mobile, tablet, tap, lap, pc, screen  */
+/* 375, 576, 768, 992, 1200, 1400 */
+/* px لازم احط */
+/* لازم اعمل وضع افتراضي */
+/* max-width => لازم ابدا بالكبير و اروح للرقم الصغير */
+/* min-width => لازم ابدا بالصغير و اروح للرقم الكبير */
+#mda{
+    color: red;
+}
+
+@media (max-width: 992px){
+    #mda{
+        color: blue;
+    }
+}
+@media (max-width: 768px){
+    #mda{
+        color: green;
+        font-size: larger;
+        text-decoration: none;
+    }
+}
+@media (max-width: 576px){
+    #mda{
+        color: gray;
+        font-size: larger;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+/*
+@media screen and (max-width: 768px){
+    #mda{
+        color: green;
+        font-size: larger;
+        text-decoration: none;
+    }
+}
+@media only screen and (max-width: 576px){
+    #mda{
+        color: gray;
+        font-size: larger;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+@media (min-width: 576px) and (max-width: 992px){
+    #mda{
+        color: gray;
+        font-size: larger;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+@media print and (max-width: 992px){
+    #mda{
+        color: gray;
+        font-size: larger;
+        text-decoration: none;
+        font-weight: bolder;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+*/

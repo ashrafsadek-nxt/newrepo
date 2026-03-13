@@ -1,0 +1,180 @@
+/* Global Styles */
+:root{
+    --main-color: #2c3e50;
+    --hover-color: #45a049;
+    --dark-hover-color: #387a3a;
+    --white-color: white;
+    --search-btn-color: #45a049;
+    --search-btn-hover: #387a3a;
+    --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --font-size: 1rem;
+    --gap: 10px;
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--font-family);
+    background-color: #f4f4f4;
+    padding-top: 60px;
+    line-height: 1.5;
+}
+/* Navbar Logo & Brand */
+.navbar{
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+.logo{
+    /* display طريقة عرض العنصر على الصفحة */
+    /* flex => parent and child عشان تشتغل لازم يكون */
+    /* التنسيق بتكتب على الاب ويبان تأثيره على الابن */
+    /* بيخلي كل الابناء جنب بعض بالعافيه بالغصب */
+    display: flex;
+    /* align-item => display: flex لازم تشتغل مع */
+    /* align-item => بتعمل محاذاه على المستوى الرأسي  */
+    align-items: center;
+    /* justify-content => display: flex لازم تشتغل مع */
+    /* justify-content => بتعمل محاذاه على المستوى الافقي  */
+    /* justify-content: start; */
+    /* display: flex يفضل تشتغل مع */
+    gap: var(--gap);
+}
+.logo-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.brand{
+    font-size: var(--font-size);
+    font-weight: bold; /* <b>, <strong> */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* Navbar Links */
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: var(--gap);
+}
+.nav-links li{
+    margin: 0;
+}
+.nav-links a{
+    color: var(--white-color) !important;
+    text-decoration: none;
+    font-size: var(--font-size);
+    padding: 8px 10px;
+    border-radius: 10px;
+    display: block; /* display: block طريقة عرض العنصر على الصفحة بحيث لا يأي اي شيء جنبه */
+}
+.nav-links a:hover{
+    background-color: var(--hover-color);
+}
+/* Dropdown Style */
+.dropdown{
+    position: relative;
+}
+.dropdown-content{
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    background-color: var(--main-color);
+    z-index: 1001;
+}
+.dropdown-content.active{
+    display: block;
+}
+/* Search Form */
+.search-container{
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+.search-container input{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.7rem;
+}
+.search-container button{
+    padding: 8px 12px;
+    background: linear-gradient(to bottom,var(--search-btn-color), var(--search-btn-hover));
+    border: none;
+    border-radius: 10px;
+    color: var(--white-color) !important;
+    cursor: pointer;
+}
+/* hamburger Button */
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding: 5px;
+    background: transparent;
+    border: none;
+
+}
+.hamburger .bar{
+    width: 30px;
+    height: 3px;
+    background-color: var(--white-color);
+}
+.hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2){
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+.hamburger.active{
+    transform: rotate(90deg);
+}
+/* Responsive Styles */
+@media (max-width: 768px){
+    .brand{
+        font-size: 0.7rem;
+        white-space: nowrap;
+    }
+    .nav-links{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--main-color);
+        padding: 5px 0;
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+    .nav-links li{
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links a{
+        width: 100%;
+        padding: 12px 20px;
+    }
+    .hamburger{
+        display: flex;
+    }
+}

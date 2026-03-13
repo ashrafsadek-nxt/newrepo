@@ -1,0 +1,118 @@
+/*
+CSS selector types
+1- simple
+2- combinator
+3- attribute
+4- pseudo class
+5- pseudo element
+*/
+/* simple selector */
+/* Universal Selector * */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: green;
+}
+/* HTML Element */
+p{
+    font-weight: bolder;
+}
+/* id # */
+#head{
+    color: gray;
+    font-weight: normal;
+}
+#un{
+    text-decoration: none;
+}
+/* class . */
+.pr{
+    text-decoration: underline;
+    background: lightgray;
+}
+img, video{
+    width: 150px;
+}
+/* combinator selector (space + ~ >) */
+div p{
+    color: blue;
+}
+div .pp{
+    color: brown;
+}
+ol li span{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+#dv + #u{
+    background-color: blueviolet;
+}
+/* Pseudo class */
+a:hover{
+    text-decoration: none;
+    color: red;
+    font-size: large;
+}
+button:hover{
+    padding: 10px;
+    border: 2px solid red;
+}
+input:focus{
+    background: red;
+}
+#oo li:first-child{
+    color: red
+}
+#oo li:last-child{
+    color: blue
+}
+#oo li:nth-child(3){
+    color: orange
+}
+/*
+#oo li:nth-child(odd){
+    color: orange
+}
+#oo li:nth-child(even){
+    color: orange
+}
+*/
+/* Pseudo Element */
+.parag::before{
+    content: "*** ";
+    color: blue;
+}
+#eee::after{
+    content: " --- hello ---";
+    color: red;
+}
+p::first-letter{
+    color: blueviolet;
+}
+#fff::first-line{
+    font-weight: bolder;
+    color: red;
+}
+::selection{
+    color: chocolate;
+}
+input::placeholder{
+    color: green;
+}
+/* Attribute */
+input[type="text"]{
+    border: 2px solid red;
+}
+a[target="_blank"]{
+    color: red;
+    text-decoration: none;
+    font-size: larger;
+}
+img[src=""]{
+
+}
+img[src^="https://"]{
+
+}
