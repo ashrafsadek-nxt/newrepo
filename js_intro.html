@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>inline javascript</h3>
+    <button onclick="alert('hello')">click</button>
+    <button ondblclick='confirm("are you sure");alert("yes")'>double click</button>
+    <button onmouseover="confirm('are you sure');alert('yes');prompt('enter your name')">mouse over</button>
+    <!-- internal javascript -->
+    <script>
+        document.write("hello")
+        document.write("<br><br>hello")
+        document.write("<h3>hello</h3>")
+        // alert("yes")
+        /* ... */
+    </script>
+    <!-- external javascript -->
+    <script src="./assets/js/scripting.js"></script>
+</body>
+</html>
